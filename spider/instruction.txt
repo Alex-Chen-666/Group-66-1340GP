@@ -1,0 +1,99 @@
+******************************************************************************************
+1.Game rules
+
+*Spider Solitaire is a card game:
+  1.At the beginning, n columns of cards (n is determined by the user) are randomly dealt.
+    Only the bottom card in each column is face-up.
+  2.To the right of these n columns is the stock pile, which can be used to deal one card 
+    to each column when you want a new set of cards. 
+  3.The newly dealt cards are all face-up.When all the face-up cards in a column are 
+    removed, the bottom card of that column automatically flips face-up. 
+  4.Your objective is to form a sequence of cards of the same suit, from King to Ace (in 
+    descending order from top to bottom), which will then be removed from the table. 
+  5.Your ultimate goal is to remove all the cards from the table.
+
+*To move cards, you are supposed to input the starting column, starting row, and 
+ destination column to drag the cards onto another pile. 
+
+*The rules for moving cards are as follows:
+  1.You can move the bottom card of any pile to an empty pile.
+  2.You can move the bottom card of a pile onto another card whose face value is one 
+    higher than the card you drag.(regardless of suit).
+  3.A group of cards of the same suit and in sequential order can be moved as a unit 
+    (the starting column and starting row should imply the position of the top card 
+    of the group you want to move).
+  4.When a complete sequence from King to Ace, with the same suit, is formed, that 
+    sequence is removed from the table.
+  5.If there are no more moves available or no more meaningful moves to be made, you 
+    can press 'r' to deal a new set of cards. Additionally, before dealing a new set 
+    of cards, there should be no empty piles.
+******************************************************************************************
+2.Game Procedure
+#Please note: 
+  1.Before starting the game, please set the terminal to full screen.
+  2.This game can only be operated using the keyboard. You can use the 'W''S''A''D' keys 
+    to move the cursor up, down, left, and right, and press 'Enter' to enter the next 
+    interface.
+****************************************
+*After entering Spider Solitaire, you will see six options in the first interface.
+*They are respectively 'Instruction', 'Resume previous game', 'Start a new game', 
+                       'History record', 'Clear all history', 'Exit'.
+*You are now in 'Instruction'. The remaining five parts are:
+  1. Resume previous game: Display the interface of history records.
+     The records are shown in the format of "number + game status + time".
+     Use 'w' and 's' to scroll up and down to select your preferred record, 
+     then press "Enter" to resume the corresponding game.
+  2. Start a new game: Enter the game difficulty settings interface, 
+     and then start a new game.
+  3. History record: Display the interface of history records.
+     The records are shown in the format of "number + game status + time".
+     Use 'w' and 's' to scroll up and down to select your preferred record.
+     then press 'Enter' to preview this record [read only].
+     Press 'Enter' again to return to Spider Solitaire interface.
+  4. Clear all history: Press 'Enter' to clear all history records.
+  5. Exit: Exit Spider Solitaire and return to previous interface.
+
+*Please choose one option and press 'Enter'.
+****************************************
+*After choosing 'start a new game' and pressing 'Enter', you will come to the difficulty 
+ settings interface.
+*You can set the number of columns(i.e. the number of the card piles),
+             the number of decks(i.e. how many decks of cards you want to play with)
+             the number of suits
+             the number of card dealt(i.e. the number of opportunities to deal cards)
+*Please move the cursor on your ideal option using 'w''s''a''d'. 
+*Only when you finalize all the options should you press 'Enter'.
+*Otherwise you may directly start playing the game with incomplete settings because once 
+ you press 'Enter', you will go to next interface.
+****************************************
+*Game starts.
+*Please input your command.
+*Your command is expected to be one of these three:
+  1.'q':quit;
+  2.'r':deal;
+  3.'a b c':move the card in column a, row b and cards below it(if any) to column c
+    or 'a c': move the bottom card of column a to column c
+*If your input is not valid, our program will print the error type of your input and 
+ waiting for your retry.  
+
+*If you input 'q', you will see 'Back up or not?[y/n]'.
+ Input 'y' if you want to back up your game status and continue next time. 
+ Otherwise, please input 'n'.
+****************************************
+*The number after 'Step' on the screen represents the number of successful card movements 
+ you have made so far.
+
+*Once you have run out of dealing opportunities, our program will automatically check for 
+ a stalemate after each successful move. 
+ If a stalemate is detected, you will see two types of hints on your screen:
+  1."you are in a stalmate now.": No valid move can be made;
+  2."you will probably have no meaningful move after several steps.": 
+    Even if there are valid moves, the cards will return to their original positions 
+    after several steps.
+    such moves are meaningless and will not change the outcome.
+*When a complete sequence from King to Ace, with the same suit, is formed, that sequence 
+ is removed from the table.
+*If you remove all the cards from the table, congratulations, you have completed the game.
+ You will return to the first interface.
+******************************************************************************************
+END~~~~~~
