@@ -43,6 +43,7 @@
      The records are shown in the format of "number + game status + time".
      Use 'w' and 's' to scroll up and down to select your preferred record, 
      then press "Enter" to resume the corresponding game.
+     You can't resume a "Success" or "Stalemate" game.
   2. Start a new game: Enter the game difficulty settings interface, 
      and then start a new game.
   3. History record: Display the interface of history records.
