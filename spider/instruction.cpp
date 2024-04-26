@@ -243,8 +243,8 @@ void instruction(){
     //print the instruction.txt and showcase animation examples
     //no input
     //no output
-    vector<int>pages_start = {1, 19, 20, 22, 25, 27, 30, 37, 68, 72, 73, 89, 90, 94};
-    vector<int>pages_end = {18, 19, 21, 24, 26, 29, 36, 67, 71, 72, 88, 89, 93, 99};    //use vector here to store the beginning line and ending line of each page
+    vector<int>pages_start = {1, 19, 20, 22, 25, 27, 30, 37, 69, 73, 74, 90, 91, 95};
+    vector<int>pages_end = {18, 19, 21, 24, 26, 29, 36, 68, 72, 73, 89, 90, 94, 100};    //use vector here to store the beginning line and ending line of each page
     int page = 1;
     std::cout << "\033[?25l";
     while (true){
