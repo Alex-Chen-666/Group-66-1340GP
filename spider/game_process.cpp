@@ -122,8 +122,31 @@ int game_process(int column_number, int reserved_chances, int decks_of_card, int
                     outcome = "Success";
                     column_center_print(6 + 8 * column_number + 6);
                     std::cout << "Congratulations!" << std::endl;
-                    int tmp = save(column_number, reserved_chances, decks_of_card, suit_num, 
-                        step, hidden_position, card, savedcard, outcome);
+                    column_center_print(6 + 8 * column_number + 6);
+                    std::cout << "Back up or not?[y/n]" << std::endl;       //ask whether the player wants to save current game
+                    std::string answer, choice;
+                    column_center_print(6 + 8 * column_number + 6);
+                    getline(std::cin, answer);
+                    while (!validinput(answer)){
+                        column_center_print(6 + 8 * column_number + 6);
+                        printAndClearLine("Invalid input. Please try again.[y/n]");
+                        column_center_print(6 + 8 * column_number + 6);
+                        getline(std::cin, answer);
+                    }
+                    column_center_print(6 + 8 * column_number + 6);
+                    std::cout << "                                   " << std::endl;
+                    for (char i:answer){
+                        if (isalpha(i))
+                            choice = i;
+                    }
+
+                    if (choice == "y"){    //save current game
+                        int tmp = save(column_number, reserved_chances, decks_of_card, suit_num, \
+                            step, hidden_position, card, savedcard, outcome);
+                        total_file_index++;
+                    }
+
+                    return 1;
                 }                
             }
         }
