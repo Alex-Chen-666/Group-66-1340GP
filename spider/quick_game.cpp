@@ -4,7 +4,7 @@ using namespace std;
 
 
 
-
+//this fuction is to refresh the screen
 void refresh(){
     system("clear");
     printGrid();
