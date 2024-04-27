@@ -3,7 +3,7 @@
 int choose_game(int flag){
     //let the player select the game he wants to play (or exit)
     //input: default flag = 0
-    //output: return 0 to start "Spider Solitaire"; return 1 to start "消消乐"; return 2 to exit
+    //output: return 0 to start "Spider Solitaire"; return 1 to start "Poker crush"; return 2 to exit
     
     int path_size = 1;
     std::vector<updownchoice> path(path_size);     //use vector to store main interface
