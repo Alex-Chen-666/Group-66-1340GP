@@ -125,5 +125,5 @@ void animation() {//show the begining animation
     system("stty echo");
     std::cout<<"\033[?25h";
     return ;
-}//"\033[1A 向上移动一格 、033[1B 向下移动一格"
+}
 
