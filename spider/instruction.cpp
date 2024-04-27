@@ -140,7 +140,7 @@ void read(int page, vector<int> pages_start, vector<int>pages_end){
              a vector storing the line number of the last line of each page */
     //output: print specific page and showcase animation examples
     ifstream fin;
-    fin.open("instruction.txt");
+    fin.open("instruction_spider.txt");
     if (fin.fail())
         exit(1);
     string line;
