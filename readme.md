@@ -50,6 +50,7 @@ Game rules:
             5) If there are no more moves available or no more meaningful moves to be made, you 
                 can press 'r' to deal a new set of cards. Additionally, before dealing a new set 
                 of cards, there should be no empty piles.
+
 2. Poker Crush:
     ***Welcome to Poker Crush! Get ready for an exciting and addictive match-3 puzzle game that
     will put your skills to the test. Just like Spider Solitaire, Poker Crush offers a unique 
@@ -74,7 +75,6 @@ Game rules:
         2) Press the key w a s d to choose the direction to be swapped
 
 
-
 Features:
     instruction.cpp: 
         We enable Spider Solitaire's instruction to flip page by page via the player's control.
@@ -82,10 +82,13 @@ Features:
             Data structures for storing game status (use vector)
             Dynamic memory management (use vector)
     loading_save.cpp:
-        We add archive functions so that the player can save/resume his history games.
-        Besides, the player can browse through his history records and clear his history by clicking "
+        1) The player can save the record during his game of Spider Solitaire.
+        2) The player can resume his history game by clicking "Resume previous game" in the main interface of Spider Solitaire, 
+            then choose the specific history game he wants to resume.    
+        3) The player can browse through his history records by clicking "History record" in the main interface of Spider Solitaire.
+        4) The player can clear his history by clicking "clear history" in the main interface of Spider Solitaire.
         Corresponding code requirement:
-            File I/O
+            File input/output
     updownchoice.cpp: 
         create the choice mainface that can be controlled instantly without enter
     choose_history.cpp: 
