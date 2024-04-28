@@ -1,16 +1,16 @@
 ENGG1340 Group 66 presents
 "Poker Carnival"
 
-Team Members:
+1. Team Members:
     Chen Zhendong
     Cheng Lefan
     Cheng Xiuheng
-    Gong Jianxiang
+    Gong Jianxiang 3036129151
     Li Shibiao
 
 
-Description & Introduction:
-Description:
+2. Description & Introduction:
+2.1. Description:
     Our Poker-themed group project "Poker Carnival" is a comprehensive game combination.
     It contains 2 games: Spider Solitaire and Poker Crush (which is a match-3 game).
     The player needs to:
@@ -20,10 +20,10 @@ Description:
     We believe the fusion of Spider Solitaire and Poker Crush creates an intriguing and relaxing game experience.
     Though some scenarios may be a bit challenging, we sincerely hope you to relax and have fun in our games! 
 
-Game rules:
-1. Spider Solitaire:
-    ***For more details about game operation, please refer to instruction_spider.txt 
-    or select "Instruction" in Spider Solitaire's main interface***
+2.2. Game rules:
+    2.2.1. Spider Solitaire:
+        ***For more details about game operation, please refer to instruction_spider.txt 
+        or select "Instruction" in Spider Solitaire's main interface***
         *Spider Solitaire is a card game:
             1) At the beginning, n columns of cards (n is determined by the user) are randomly dealt.
                 Only the bottom card in each column is face-up.
@@ -51,10 +51,10 @@ Game rules:
                 can press 'r' to deal a new set of cards. Additionally, before dealing a new set 
                 of cards, there should be no empty piles.
 
-2. Poker Crush:
-    ***Welcome to Poker Crush! Get ready for an exciting and addictive match-3 puzzle game that
-    will put your skills to the test. Just like Spider Solitaire, Poker Crush offers a unique 
-    gameplay experience that combines elements of strategy, matching, and card games***
+    2.2.2. Poker Crush:
+        ***Welcome to Poker Crush! Get ready for an exciting and addictive match-3 puzzle game that
+        will put your skills to the test. Just like Spider Solitaire, Poker Crush offers a unique 
+        gameplay experience that combines elements of strategy, matching, and card games***
 
         1) At the start, you can choose mode to decide the difficulty of the game
             each level of game has different set-steps and set-marks
@@ -74,8 +74,7 @@ Game rules:
         1) Press the key 1~9 to choose the coordinates of the first block
         2) Press the key w a s d to choose the direction to be swapped
 
-
-Features:
+3. Features:
     We have proper indentation and naming styles for all the functions and files to enhance the readability, maintainability, 
         and collaboration aspects throughout the group project development.
     We have sufficient in-code documentation to help programmers understand the relevant code's functionality, purpose, 
@@ -126,7 +125,7 @@ Features:
     
 
 
-Non-standard C/C++ library:
+4. Non-standard C/C++ library:
 In column_center_print.cpp and full_screen.cpp:
     1. <sys/ioctl.h>
     2. <unistd.h>
@@ -134,7 +133,7 @@ These libraries are used to get the player's row size and column size of the scr
 We can then access the player's screen size to prompt him to resize to full screen.
 
 
-Compilation and execution instructions:
+5. Compilation and execution instructions:
     $ make p
     $ make clean(clean all the Compilation file)
     $ ./p
