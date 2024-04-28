@@ -96,16 +96,15 @@ void shiftlr(std::vector<updownchoice> &choice, int &choice_position, std::strin
 }
 
 void focus_title(std::vector<updownchoice>& choice){
-    //initialize choice
-    //input: choice
-    //output: initialized choice 初始的选择从最左列开始
-    choice[0].title = choice[0].createcolor("magenta") + choice[0].title.substr(8);//标题变亮
-}
+    //add color to the selection bar
+    //input: a vector that contains selection bar
+    //output: no output
+    choice[0].title = choice[0].createcolor("magenta") + choice[0].title.substr(8);
 
 void printscreen(std::vector<updownchoice> choice, int size, int flag){
-    //centered output
-    //input: 
-    //output: 居中输出效果，打印选择界面
+    //print out the selection bar
+    //input: a vector that contains selection bar
+    //output: no output
     int col_len = 0, row_len;
     for (int i = 0; i < size; i++)
         col_len += choice[i].center_length;
