@@ -55,7 +55,7 @@ int quick_game(int level,bool endless) {
         else if(invalid==4)         
             printInvalid('u');              //print the error information
         invalid=0;
-        ++steps;
+
                                        
         y1_state = inputy1(y1);             //start reading the y coordinate            
         if (y1_state == -1) 
@@ -73,6 +73,7 @@ int quick_game(int level,bool endless) {
             invalid=2;
             continue;
         }
+        ++steps;
         input_direction(x1, y1, x2, y2);    //Select the direction of the exchange
         if (x2 == 0 || x2 > GRID_SIZE+1 ||
             y2 == 0 || y2 > GRID_SIZE+1){
