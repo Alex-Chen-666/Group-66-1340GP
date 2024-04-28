@@ -1,5 +1,5 @@
-#ifndef QUICKGAME
-#define QUICKGAME
+#ifndef QUICKGAME_H
+#define QUICKGAME_H
 #include "headfiles.h"
 #include <iostream>
 #include <map>
