@@ -7,7 +7,7 @@ int choose_game(int flag){
     
     int path_size = 1;
     std::vector<updownchoice> path(path_size);     //use vector to store main interface
-    path[0] = {3, 3, 30, 40, "Poker Carnival", {"--Spider Solitaire--", "--Poker crash--",  "--Exit--"}, 
+    path[0] = {3, 3, 30, 40, "Poker Carnival", {"--Spider Solitaire--", "--Poker crush--",  "--Exit--"}, 
     {"cyan", "green", "red", "yellow", "green", "blue", "red"}};
     //Main interface: Spider Solitaire, match-3 , Exit
 
