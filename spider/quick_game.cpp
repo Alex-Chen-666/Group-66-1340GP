@@ -15,9 +15,9 @@ void refresh(bool endless){
 }
 
 map<int, array<int, 3> > Levels = {//using map to decide the level of the game
-        {0, {8, 10, 25}},
-        {1, {6, 10, 25}},
-        {2, {6, 10, 30}},
+        {0, {8, 9, 35}},
+        {1, {6, 9, 55}},
+        {2, {6, 15, 100}},
         {3, {9, 0,   0}}
     };
 //the second game "poker_crush" starts here
