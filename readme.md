@@ -76,11 +76,17 @@ Game rules:
 
 
 Features:
+    We have proper indentation and naming styles for all the functions and files to enhance the readability, maintainability, 
+        and collaboration aspects throughout the group project development.
+    We have sufficient in-code documentation to help programmers understand the relevant code's functionality, purpose, 
+        and implementation details.
+    
     instruction.cpp: 
         We enable Spider Solitaire's instruction to flip page by page via the player's control.
         Corresponding code requirement:
             Data structures for storing game status (use vector)
             Dynamic memory management (use vector)
+    
     loading_save.cpp:
         1) The player can save the record during his game of Spider Solitaire.
         2) The player can resume his history game by clicking "Resume previous game" in the main interface of Spider Solitaire, 
@@ -89,12 +95,21 @@ Features:
         4) The player can clear his history by clicking "clear history" in the main interface of Spider Solitaire.
         Corresponding code requirement:
             File input/output
+    
     updownchoice.cpp: 
-        create the choice mainface that can be controlled instantly without enter
+        Create the choice mainface that can be controlled instantly without enter
+        Corresponding code requirement:
+            Data structures for storing game status (use vector)
+    
     choose_history.cpp: 
-        can see the history with rolling up and down
+        The player can scroll up and down the history records
+        Corresponding code requirement:
+            Data structures for storing game status (use vector)
+    
     stalemate3.cpp: 
         line61-82: recursion
+        We used recursion to judge whether there is a stalemate.
+    
     print_grid.cpp:
         We use vector in the type of a self-defined structure to store the game progress
         Plus, we highlight the row/block the player has chosen to assist analysis
@@ -102,14 +117,13 @@ Features:
             Data structures for storing game status (use vector)
             Dynamic memory management (use vector)
             Generation of random game sets or events
+    
     quick_game.cpp:
         We allow the player to choose the game mode they want
         Corresponding code requirement:
             Generation of random game sets or events
             Dynamic memory management (use map)
-
-
-
+    
 
 
 Non-standard C/C++ library:
