@@ -39,18 +39,23 @@ string createcolor(const string& foreground, const string& background ) {
 vector<vector<block>> grid;// a 2-D vector to store the board
 //to initialize the grid defined above
 void initGrid() {
-    grid.resize(GRID_SIZE+2,vector<block>(GRID_SIZE+2));
+    grid.resize(GRID_SIZE+1);
+    for (int i=0;i<=GRID_SIZE;i++){
+        grid[i]=vector<block>(GRID_SIZE+1);
+    }
     for (int i = 0; i <= GRID_SIZE; i++) {
         for (int j = 0; j <= GRID_SIZE; j++) {
             if ((i == 0) || (j == 0)){
-                grid[i][j].type = -2;}
+                grid[i][j].type = -2;
+            }
 
             else{
-            grid[i][j].type = rand() % SUIT_COUNT;// randomly distributed
-            grid[i][j].match = 0;}
+                grid[i][j].type = rand() % SUIT_COUNT;// randomly distributed
+                grid[i][j].match = 0;
             }
         }
     }
+}
 
 
 
