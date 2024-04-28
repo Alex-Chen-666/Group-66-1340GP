@@ -200,7 +200,7 @@ void random_dealing_cards(std::vector<std::vector<std::string>> &card, std::vect
                 hidden_position[i] += 1;
         card[i].insert(card[i].end(), total_card.begin(), total_card.begin() + 1);
         std::this_thread::sleep_for (duration);
-        printcard(card, column, hidden_position);
+        printcard(card, column, hidden_position,false);
         std::cout << "\n" << "\033[7A";
         for (int i = 0; i < card[i].size(); i++)
             std::cout << "\033[2A";
@@ -212,7 +212,7 @@ void random_dealing_cards(std::vector<std::vector<std::string>> &card, std::vect
     for (int i = 0; i < difference; i++){
         card[i].insert(card[i].end(), total_card.begin(), total_card.begin() + 1);
         std::this_thread::sleep_for (duration);
-        printcard(card, column, hidden_position);
+        printcard(card, column, hidden_position,false);
         std::cout << "\n" << "\033[7A";
         for (int i = 0; i < card[i].size(); i++)
             std::cout << "\033[2A";
