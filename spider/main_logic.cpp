@@ -20,12 +20,12 @@ int check(){
     for (int i = 1; i <= GRID_SIZE; i++) {
         for (int j = 1; j <= GRID_SIZE; j++) {
             if (grid[i][j].type == grid[i-1][j].type&&
-                grid[i][j].type == grid[i+1][j].type){
+                (i!=GRID_SIZE&&grid[i][j].type == grid[i+1][j].type)){
                 grid[i-1][j].match++;
                 grid[i][j].match++;
                 grid[i+1][j].match++;
                 count++;}
-            if (grid[i][j].type == grid[i][j+1].type&&
+            if ((j!=GRID_SIZE&&grid[i][j].type == grid[i][j+1].type)&&
                 grid[i][j].type == grid[i][j-1].type){
                 grid[i][j-1].match++;
                 grid[i][j].match++;
@@ -74,5 +74,3 @@ void fall(){
         }
     }
 }
-
-
