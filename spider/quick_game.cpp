@@ -55,7 +55,6 @@ int quick_game(int level,bool endless) {
         else if(invalid==4)         
             printInvalid('u');              //print the error information
         invalid=0;
-
                                        
         y1_state = inputy1(y1);             //start reading the y coordinate            
         if (y1_state == -1) 
