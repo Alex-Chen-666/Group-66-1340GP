@@ -13,19 +13,19 @@ int number_length(int num) {//input is an int. return the number of digit.
     std::string str = std::to_string(num);
     return str.length();
 }
-void printcard(std::vector<std::vector<std::string>> card,int column,int * hidden_position) {//input are the important arguments of the table, print the table
+void printcard(std::vector<std::vector<std::string>> card,int column,int * hidden_position,bool clear_line) {//input are the important arguments of the table, print the table
     //Data structures for storing game status 
     std::cout<<"\033[?25l";
     std::string head,tail; 
     int max_card_number=max(card),row=1;//row records which column is being printed now.
     int max_card_number_len=2;
-    column_center_print(6+8*column+6);
+    column_center_print(6+8*column+6,0,clear_line);
     std::cout<<"     ";
     for(int i=1;i<=column-1;i++) {
         std::cout<<i<<"       ";
     }
     std::cout<<column<<std::endl;
-    column_center_print(6+8*column+6);
+    column_center_print(6+8*column+6,0,clear_line);
     for(int level=0;level<=2*max_card_number+2;level++){
         if (level%2==0){//even layer
             for(int i=0;i<column;i++) {
@@ -76,7 +76,7 @@ void printcard(std::vector<std::vector<std::string>> card,int column,int * hidde
                     std::cout<<head<<"      "<<tail;
                 }
                 if(tail=="\n")
-                    column_center_print(6+8*column+6);
+                    column_center_print(6+8*column+6,0,clear_line);
             }
         }
         else {//odd layer//layers with suits are all here
@@ -169,7 +169,7 @@ void printcard(std::vector<std::vector<std::string>> card,int column,int * hidde
                     std::cout<<head<<"      "<<tail;
                 }
                 if(tail.substr(tail.length()-1)=="\n")
-                    column_center_print(6+8*column+6);
+                    column_center_print(6+8*column+6,0,clear_line);
             }            
         }
     }
