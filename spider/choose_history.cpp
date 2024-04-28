@@ -1,4 +1,4 @@
-////Coding Requirement: Data structures for storing game status: line15
+////Coding Requirement: Data structures for storing game status: line16
 //feature: can see the history with rolling up and down
 #include "choose_history.h"
 #include "process_record.h"
