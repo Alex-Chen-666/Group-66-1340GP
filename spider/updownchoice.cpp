@@ -100,7 +100,7 @@ void focus_title(std::vector<updownchoice>& choice){
     //input: a vector that contains selection bar
     //output: no output
     choice[0].title = choice[0].createcolor("magenta") + choice[0].title.substr(8);
-
+}
 void printscreen(std::vector<updownchoice> choice, int size, int flag){
     //print out the selection bar
     //input: a vector that contains selection bar; number of selection bar; type of prompt information
