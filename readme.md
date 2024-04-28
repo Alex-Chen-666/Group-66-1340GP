@@ -9,6 +9,7 @@ Team Members:
     Li Shibiao
 
 
+
 Description & Introduction:
 Description:
     Our Poker-themed group project "Poker Carnival" is a comprehensive game combination.
@@ -54,7 +55,7 @@ Game rules:
     2. Poker Crush:
     ***Welcome to Poker Crush! Get ready for an exciting and addictive match-3 puzzle game that
     will put your skills to the test. Just like Spider Solitaire, Poker Crush offers a unique 
-    gameplay experience that combines elements of strategy, matching, and card games.***
+    gameplay experience that combines elements of strategy, matching, and card games***
 
         1) At the start, you can choose mode to decide the difficulty of the game
             each level of game has different set-steps and set-marks
@@ -80,9 +81,11 @@ Features:
         Corresponding code requirement:
             Data structures for storing game status (use vector)
             Dynamic memory management (use vector)
-    loading_save.cpp: file I/O
+    loading_save.cpp:
         We add archive functions so that the player can save/resume his history games.
         Besides, the player can browse through his history records and clear his history by clicking "
+        Corresponding code requirement:
+            File I/O
     updownchoice.cpp: 
         create the choice mainface that can be controlled instantly without enter
     choose_history.cpp: 
@@ -90,16 +93,16 @@ Features:
     stalemate3.cpp: 
         line61-82: recursion
     print_grid.cpp:
+        We use vector in the type of a self-defined structure to store the game progress
+        Plus, we highlight the row/block the player has chosen to assist analysis
         Corresponding code requirement:
             Data structures for storing game status (use vector)
             Dynamic memory management (use vector)
-            Generation of random game sets or events: line49
-
-
-
+            Generation of random game sets or events
     quick_game.cpp:
+        We allow the player to choose the game mode they want
         Corresponding code requirement:
-            Generation of random game sets or events: line17
+            Generation of random game sets or events
             Dynamic memory management (use map)
 
 
