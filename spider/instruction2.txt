@@ -1,13 +1,23 @@
-Hey there! Have you ever tried playing a match-3 game? 
-They're super fun and addictive puzzle games that you can play on your computer.
-In a match-3 game, you'll find a colorful game board filled with tiles or gems of different shapes and colors. 
-Your goal is to swap adjacent tiles to create matches of three or more of the same kind. 
-When you make a match, those tiles disappear, and new ones fall from the top to fill the gaps.
-
-Match-3 games are perfect for some relaxing fun during your break or while waiting for something. 
-They're suitable for players of all ages, 
-so you can even compete with your friends or family and see who can achieve the highest scores.
-
-So why not give a match-3 game a try? 
-You'll be hooked in no time, swapping tiles and creating fantastic combos. 
-Get ready for a colorful and addictive puzzle adventure!
+******************************************************************************
+Welcome to "Poker Match"! 
+Get ready to immerse yourself in an exciting match-3 puzzle game that will put
+    your strategic thinking and matching skills to the test. 
+As a player, your goal is to create matches of three or more identical blocks 
+    on the game grid to eliminate them and earn points.
+In "Poker Match", you'll be faced with a grid filled with various colorful pokers.
+******************************************************************************
+Your task is to swap adjacent blocks strategically, 
+    aiming to create matches and trigger chain reactions for maximum points. 
+The more blocks you match and eliminate in a single move, the higher your score will soar.
+ ******************************************************************************
+With easy, intermediate, difficult, and infinite modes to choose from,
+    "Poker Match" offers an immersive and addictive gaming experience.
+ ******************************************************************************
+To play, use the numeric keys 1~9 to select the coordinates of the first block you want to swap.
+Here, you can press 'q' to exit.
+Then, use the keys w(up), a(left), s(down), and d(right) to choose the direction 
+    in which you want to swap the blocks. 
+Plan your moves carefully to create powerful matches and trigger cascading reactions for higher scores.
+  ******************************************************************************
+Are you ready to embark on this colorful and challenging match-3 puzzle adventure? 
+Let the blocks fall into place, and may the matches be in your favor!
