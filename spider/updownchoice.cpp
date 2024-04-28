@@ -103,7 +103,7 @@ void focus_title(std::vector<updownchoice>& choice){
 
 void printscreen(std::vector<updownchoice> choice, int size, int flag){
     //print out the selection bar
-    //input: a vector that contains selection bar
+    //input: a vector that contains selection bar; number of selection bar; type of prompt information
     //output: no output
     int col_len = 0, row_len;
     for (int i = 0; i < size; i++)
