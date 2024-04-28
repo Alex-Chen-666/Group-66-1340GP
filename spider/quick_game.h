@@ -1,7 +1,5 @@
 #ifndef QUICKGAME
 #define QUICKGAME
-
-
 #include "headfiles.h"
 #include <iostream>
 #include <map>
@@ -13,6 +11,6 @@
 #include "poker_crush.h"
 
 using namespace std;
-void refresh();
-int quick_game(int level);
+void refresh(bool endless=false);
+int quick_game(int level,bool endless=false);
 #endif
