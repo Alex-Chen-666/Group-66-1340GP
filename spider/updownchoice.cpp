@@ -138,11 +138,14 @@ void printscreen(std::vector<updownchoice> choice, int size, int flag){
         }
         std::cout << std::endl;
     }
-    if (flag == 1){
+    if (flag == 0){
+        column_center_print(col_len);
+        std::cout << "\r";  
+    }
+    else if (flag == 1){
         column_center_print(col_len);
         std::cout << "\033[31mError in file opening!\033[0m" << std::endl;
         std::cout << "\033[1A";
-        
     }
     else if (flag == 2){
         column_center_print(col_len);
