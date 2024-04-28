@@ -1,3 +1,4 @@
+#include "column_center_print.h"
 void column_center_print(int column_num, int row_num,bool clear_line){
     /*Center the image on the screen (if no row number is passed in, only the columns are centered).
       Every time a line is printed, the columns are centered once (when there is a carriage return)。
