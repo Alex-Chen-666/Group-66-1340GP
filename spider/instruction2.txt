@@ -9,15 +9,16 @@ In "Poker Match", you'll be faced with a grid filled with various colorful poker
 Your task is to swap adjacent blocks strategically, 
     aiming to create matches and trigger chain reactions for maximum points. 
 The more blocks you match and eliminate in a single move, the higher your score will soar.
- ******************************************************************************
+******************************************************************************
 With easy, intermediate, difficult, and infinite modes to choose from,
     "Poker Match" offers an immersive and addictive gaming experience.
- ******************************************************************************
+******************************************************************************
 To play, use the numeric keys 1~9 to select the coordinates of the first block you want to swap.
 Here, you can press 'q' to exit.
 Then, use the keys w(up), a(left), s(down), and d(right) to choose the direction 
     in which you want to swap the blocks. 
 Plan your moves carefully to create powerful matches and trigger cascading reactions for higher scores.
-  ******************************************************************************
+******************************************************************************
 Are you ready to embark on this colorful and challenging match-3 puzzle adventure? 
 Let the blocks fall into place, and may the matches be in your favor!
+******************************************************************************
