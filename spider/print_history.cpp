@@ -16,7 +16,7 @@ void print_history(std::string fileIndex,int &flag){
         column_center_print(6+8*column_number+6);
         std::cout<<"decks of card: "<<decks_of_card<<"  suit number: "<<suit_num<<"  Step: "<<step<<std::endl;
         column_center_print(6+8*column_number+6);
-        std::cout<<"press enter to back\n";
+        std::cout<<"\033[31mpress enter to back\033[0m\n";
         system("stty -icanon"); //close the buffer
         system("stty -echo");//Disable echo
         while(order!="\n"){
