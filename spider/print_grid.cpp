@@ -1,12 +1,22 @@
+//Coding Requirement: Data structures for storing game status: line38
+//Coding Requirement: Generation of random game sets or events: line49
 #include "print_grid.h"
-
 using namespace std;
+//here are three global variables that will be wildly used afterwards
+//int GRID_SIZE: to set the size of the grid
+//int steps, marks: to record the steps the player has taken and the marks he gas got
+
 int GRID_SIZE = 8, steps = 10, marks = 10;
+extern int SETSTEP,SETMARK;// global variables defined in "quick_game.cpp"
+
+////To generate ANSI sequence for character-background color pair
+//input: two strings of the colors
+//output: corresponding ANSI sequence
 string createcolor(const string& foreground, const string& background ) {
     string sequence = "";
     int foregroundIndex = -1;
     int backgroundIndex = -1;
-    // 查找前景色和背景色的索引
+    // (search for character color and background color)
     for (int i = 0; i < 8; ++i) {
         if (foreground == color[i]) {
             foregroundIndex = i;
@@ -15,18 +25,19 @@ string createcolor(const string& foreground, const string& background ) {
             backgroundIndex = i;
         }
     }
-    // 生成 ANSI 转义序列
+    // (generate ANSI sequence)
     if (foregroundIndex >= 0 && backgroundIndex >= 0) {
         sequence = "\x1b[" + to_string(30 + foregroundIndex) + ";" + to_string(40 + backgroundIndex) + "m";
     } else if (foregroundIndex >= 0) {
         sequence = "\x1b[" + to_string(30 + foregroundIndex) + "m";
     } else {
-        sequence = "\x1b[0m";  // 默认为重置颜色(default is to reset color)
+        sequence = "\x1b[0m";  // (default is to reset color)
     }
 
     return sequence;
 }
-vector<vector<block>> grid;
+vector<vector<block>> grid;// a 2-D vector to store the board
+//to initialize the grid defined above
 void initGrid() {
     grid.resize(GRID_SIZE+2,vector<block>(GRID_SIZE+2));
     for (int i = 0; i <= GRID_SIZE; i++) {
@@ -35,13 +46,18 @@ void initGrid() {
                 grid[i][j].type = -2;}
 
             else{
-            grid[i][j].type = rand() % SUIT_COUNT;
+            grid[i][j].type = rand() % SUIT_COUNT;// randomly distributed
             grid[i][j].match = 0;}
             }
         }
     }
 
 
+
+
+//to print the block according to the block type
+//input: the coordinates of the block to be printed
+//       for mood, 1 means it is highlighted, 0 means it is regular
 void printunit(int i, int j, int selecting_mood) {
     int index = grid[i][j].type;
     string colortype;
@@ -94,7 +110,12 @@ void printunit(int i, int j, int selecting_mood) {
     }
 
 
-void printGrid() {
+
+
+//print out the whole board 
+//input: 0 if the player wants to play finite mood
+//       1 if the player wants to play infinite mood
+void printGrid(bool endless) {
     column_center_print(GRID_SIZE,GRID_SIZE);
     for (int i = 0; i <= GRID_SIZE; i++) {
         column_center_print(GRID_SIZE);
@@ -102,12 +123,22 @@ void printGrid() {
             printunit(i,j);}  
         cout << endl;}
     column_center_print(GRID_SIZE);
-    cout<<"Steps taken: "<<steps<<endl;
+    if(!endless)
+        cout<<"Steps taken: "  <<steps<<"/"<<SETSTEP<<endl;
+    else
+        cout<<"Steps taken: "  <<steps<<endl;
     column_center_print(GRID_SIZE);
-    cout<<"Current marks: "<<marks<<endl;
-    }
+    if(!endless)
+        cout<<"Current marks: "<<marks<<"/"<<SETMARK<<endl;
+    else
+        cout<<"Current marks: "<<marks<<endl;
+}
 
 
+
+
+//to print the warning if the player has input invalid information
+//input: char m denotes the type of error
 void printInvalid(char m) {
     column_center_print(GRID_SIZE);
     cout<<endl;
