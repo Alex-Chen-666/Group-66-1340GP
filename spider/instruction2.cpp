@@ -1,5 +1,7 @@
 //feature  file I/O in line 7
 //This part serves to print the introduction of the second game "poker_crush"
+//Hence it has no input or output
+//only print thr text in "instruction2.txt"
 #include "instruction2.h"
 void instruction2() {
     std::ifstream file("instruction2.txt");
