@@ -1,4 +1,4 @@
-//Code Requirement: 
+//Code Requirement: Data structures for storing game status: line83-97, 99-103, 105-159
 //feature: create the choice mainface that can be controlled instantly without enter
 #include "updownchoice.h"
 std::string updownchoice::createcolor(std::string back_color, std::string string_color){
