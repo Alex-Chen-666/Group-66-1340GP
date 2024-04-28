@@ -9,7 +9,6 @@ Team Members:
     Li Shibiao
 
 
-
 Description & Introduction:
 Description:
     Our Poker-themed group project "Poker Carnival" is a comprehensive game combination.
@@ -22,7 +21,7 @@ Description:
     Though some scenarios may be a bit challenging, we sincerely hope you to relax and have fun in our games! 
 
 Game rules:
-    1. Spider Solitaire:
+1. Spider Solitaire:
     ***For more details about game operation, please refer to instruction_spider.txt 
     or select "Instruction" in Spider Solitaire's main interface***
         *Spider Solitaire is a card game:
@@ -51,8 +50,7 @@ Game rules:
             5) If there are no more moves available or no more meaningful moves to be made, you 
                 can press 'r' to deal a new set of cards. Additionally, before dealing a new set 
                 of cards, there should be no empty piles.
-        
-    2. Poker Crush:
+2. Poker Crush:
     ***Welcome to Poker Crush! Get ready for an exciting and addictive match-3 puzzle game that
     will put your skills to the test. Just like Spider Solitaire, Poker Crush offers a unique 
     gameplay experience that combines elements of strategy, matching, and card games***
@@ -74,6 +72,8 @@ Game rules:
       *To play Poker Crush, simply select two adjacent cards to swap their positions. 
         1) Press the key 1~9 to choose the coordinates of the first block
         2) Press the key w a s d to choose the direction to be swapped
+
+
 
 Features:
     instruction.cpp: 
