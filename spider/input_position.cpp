@@ -19,7 +19,7 @@ int inputy1(int& y1) {
     string colortype = createcolor("green");
     cout <<colortype<< "y coordinate (vertical) "<< "\x1b[0m";
     column_center_print(10);
-    cout <<colortype<< "press 'q' to quit ";
+    cout <<colortype<< "press 'q' to quit "<< "\x1b[0m";
     char i = getchar();
     if (i == 'q') 
         {return -1;}
@@ -60,7 +60,7 @@ int inputx1( int&x1, int& y1) {
     string colortype = createcolor("blue");
     cout << colortype << "x coordinate (horizontal) "<< "\x1b[0m";
     column_center_print(10);
-    cout <<colortype<< "press 'q' to quit ";
+    cout <<colortype<< "press 'q' to quit "<< "\x1b[0m";
     char i = getchar();
     if (i == 'q') 
         {return -1;}
