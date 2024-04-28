@@ -1,43 +1,42 @@
+//Coding Requirement: Generation of random game sets or events: line17
+//Coding Requirement: Data structures for storing game status:  line25
 
 #include "quick_game.h"
 using namespace std;
 
+int SETSTEP, SETMARK; // global variable to determined the level of the game
+extern int steps, marks, GRID_SIZE;
+extern vector<vector< block > > grid;// global variable defined in "print_grid.cpp"
 
-
-//this fuction is to refresh the screen
-void refresh(){
+void refresh(bool endless){
     system("clear");
-    printGrid();
+    printGrid(endless);
     system("sleep 1");
 }
-extern int steps, marks, GRID_SIZE;
-extern vector<vector< block > > grid;
 
-map<int, array<int, 3> > Levels = {
-        {0, {8, 10, 10 }},
-        {1, {6, 10, 15}},
-        {2, {6, 10, 20}}
+map<int, array<int, 3> > Levels = {//using map to decide the level of the game
+        {0, {8, 10, 25}},
+        {1, {6, 10, 25}},
+        {2, {6, 10, 30}},
+        {3, {9, 0,   0}}
     };
-
-int quick_game(int level) {
+//the second game "poker_crush" starts here
+//input: int level,bool endless to determine the game difficulty
+//output：return whether the game is successfully completed or not
+int quick_game(int level,bool endless) {
     system("clear");
-    srand(static_cast<unsigned int>(time(0))); 
-    int SETSTEP, SETMARK;
-
+    srand(static_cast<unsigned int>(time(0))); // set the seed for rand()
     steps = 0; marks = 0; GRID_SIZE = 0;                       
-    array<int, 3> levelArr = Levels[level];
+    array<int, 3> levelArr = Levels[level]; 
     GRID_SIZE = levelArr[0];
     SETSTEP = levelArr[1];
     SETMARK = levelArr[2];
-    
-    
-    
     initGrid();
 
     while (check()){       
         eliminate(); sink(); fall();
         }
-    printGrid();
+    printGrid(endless);  //to ensure there is no match in the the original map 
 
     int invalid=0;               
     while (true){
@@ -47,69 +46,63 @@ int quick_game(int level) {
         system("stty -icanon");         //buffer off
         system("stty -echo");          //echo off
         
-        if(invalid==1){
-           printInvalid('y'); 
-        }    
-        else if(invalid==2)  
+        if(invalid==1)              
+            printInvalid('y');   
+        else if(invalid==2)         
             printInvalid('x');
-        else if(invalid ==3)
+        else if(invalid ==3)        
             printInvalid('d');
-        else if(invalid==4)
-            printInvalid('u');
-        invalid=0;                                //get the coordinates to be changed
-        y1_state = inputy1(y1);             //fisrt get the y coordinate  
-        
-        if (y1_state == -1) return -1;          //if 'q' is pressed, then quit the game
-        else if (y1_state == 0){ 
-            //printInvalid('y');         //if an invalid y value is pressed, then skip 
-            refresh(); 
+        else if(invalid==4)         
+            printInvalid('u');              //print the error information
+        invalid=0;
+        ++steps;
+                                       
+        y1_state = inputy1(y1);             //start reading the y coordinate            
+        if (y1_state == -1) 
+            return -1;                      //if the player presses 'q', then quit
+        else if (y1_state == 0){            //if an invalid y value is pressed, then skip
+            refresh(endless); 
             invalid=1;
-            continue;
-            }
-
-        x1_state = inputx1(x1, y1);         //then get the x coordinate
-        if(invalid){
-           refresh(); 
-           invalid=false;
-        }    
-        if (x1_state == -1) return -1;          //if 'q' is pressed, then quit the game         
-        else if (x1_state == 0){                                         //if an invalid x value is pressed, then skip 
-            //printInvalid('x');
-            refresh(); 
+            continue; 
+        }
+        x1_state = inputx1(x1, y1);         //start reading the y coordinate
+        if (x1_state == -1) 
+            return -1;                      //if the player presses 'q', then quit
+        else if (x1_state ==  0){           //if an invalid x value is pressed, then skip 
+            refresh(endless); 
             invalid=2;
             continue;
-            }
-
-        input_direction(x1, y1, x2, y2);//Select the direction of the exchange 
-        if(invalid){
-           refresh(); 
-           invalid=false;
-        }    
-        if (x2 == 0 || x2 > GRID_SIZE ||
-            y2 == 0 || y2 > GRID_SIZE){
-            //printInvalid('d');
-            refresh(); 
-            invalid=3;
+        }
+        input_direction(x1, y1, x2, y2);    //Select the direction of the exchange
+        if (x2 == 0 || x2 > GRID_SIZE+1 ||
+            y2 == 0 || y2 > GRID_SIZE+1){
+            refresh(endless); 
+            invalid=3;                      ////if an invalid direction is pressed, then skip 
             continue;
-            }
-        swap(y1,x1,y2,x2); //refresh();   //swap two blocks selected
+        }
+        swap(y1,x1,y2,x2);  //swap two blocks selected
 
 
         if (check()){   
             marks += check();               //if the exchange is valid, blocks begin to eliminate, fall, fill
             while (true){
-                eliminate(); refresh();
-                sink(); refresh();
-                fall(); refresh();
-                marks += check();
+                marks += eliminate();       //add the marks 
+                refresh(endless);
+                sink(); refresh(endless);
+                fall(); refresh(endless);
                 if (check() == 0) break;       
             }
-        }                               //if the exchange is invalid, blocks will shift back to the original pattern
-        else{ swap(y1,x1,y2,x2); refresh();invalid=4;
+        }                               
+        else{refresh(endless);              //if the exchange is invalid, blocks will shift back to the original pattern
+            swap(y1,x1,y2,x2); 
+            refresh(endless);
+            invalid=4;
         }
-        steps ++;
-        if ((steps  < SETSTEP) && ( marks > SETMARK)) return 2;
-        if ((steps  > SETSTEP) && ( marks < SETMARK)) return -1;
+        if(!endless){
+            if ((steps  < SETSTEP) && ( marks > SETMARK)) return 2;
+            if ((steps  > SETSTEP) && ( marks < SETMARK)) return -1;
+        }
+        
 
 
     }
