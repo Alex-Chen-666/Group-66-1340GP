@@ -7,6 +7,7 @@ void instruction2() {
     if (file.is_open()) {
         std::string line;
         while (std::getline(file, line)) {
+            column_center_print(78);
             std::cout << line << std::endl;
         }
         file.close();
