@@ -1,6 +1,4 @@
-//Code Requirement: Data structures for storing game status: line9
-#include "column_center_print.h"
-void column_center_print(int column_num, int row_num){
+void column_center_print(int column_num, int row_num,bool clear_line){
     /*Center the image on the screen (if no row number is passed in, only the columns are centered).
       Every time a line is printed, the columns are centered once (when there is a carriage return)。
       The rows are centered only once at the beginning.*/
@@ -17,7 +15,8 @@ void column_center_print(int column_num, int row_num){
             std::cout << std::endl;
         }
     }
-    std::cout << blank << "\n" << "\033[1A";    //clear current line
+    if(clear_line)
+        std::cout << blank << "\n" << "\033[1A";    //clear current line
     for (int i = 0; i < (col_size - column_num) / 2; i++)
         std::cout << "\033[1C";
 }
