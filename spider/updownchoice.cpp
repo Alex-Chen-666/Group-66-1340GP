@@ -140,18 +140,18 @@ void printscreen(std::vector<updownchoice> choice, int size, int flag){
     }
     if (flag == 1){
         column_center_print(col_len);
-        std::cout << "Error in file opening!" << std::endl;
+        std::cout << "\033[31mError in file opening!\033[0m" << std::endl;
         std::cout << "\033[1A";
         
     }
     else if (flag == 2){
         column_center_print(col_len);
-        std::cout << "No historyRecord" << std::endl;
+        std::cout << "\033[31mNo historyRecord\033[0m" << std::endl;
         std::cout << "\033[1A";
     }
     else if (flag == 3){
         column_center_print(col_len);
-        std::cout << "Press q to exit" << std::endl;
+        std::cout << "\033[31mPress q to exit\033[0m" << std::endl;
         std::cout << "\033[1A";
     }
     de_column_center_print(row_len);
