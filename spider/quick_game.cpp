@@ -99,8 +99,8 @@ int quick_game(int level,bool endless) {
             invalid=4;
         }
         if(!endless){
-            if ((steps  < SETSTEP) && ( marks > SETMARK)) return 2;
-            if ((steps  > SETSTEP) && ( marks < SETMARK)) return -1;
+            if ((steps  <= SETSTEP) && ( marks >= SETMARK)) return 2;
+            if ((steps  >= SETSTEP) && ( marks < SETMARK)) return -1;
         }
         
 
