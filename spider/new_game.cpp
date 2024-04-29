@@ -11,7 +11,7 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
         start[0].row = 1;
         start[0].position = 0;
     }
-    else if (column_position == 2&&start[2].g[start[2].position] == "3"&&start[1].g[start[1].position] != "4"){
+    else if ((column_position == 2||column_position == 1)&&start[2].g[start[2].position] == "3"&&start[1].g[start[1].position] != "4"){
         start[0].g = {"8","9"};
         start[0].row = 2;
         start[0].position = 0;
@@ -59,12 +59,10 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
     }
     else if (start[1].g[start[1].position] == "3"){
         if (start[2].g[start[2].position] != "4"&&start[2].g[start[2].position] != "3"){
-            start[0].g = {"8","9","10"};
-            start[0].row = 3;
-            start[3].g = {"8","9","10"};
-            start[3].row = 3; 
+            start[0].g = {"8","9"};
+            start[0].row = 2;
         }  
-        if (start[0].g[start[0].position] == "10" ||start[0].g[start[0].position] == "9"){
+        if (start[0].g[start[0].position] == "10" ||start[0].g[start[0].position] == "9"||start[0].g[start[0].position] == "8"){
             start[3].g = {"8","9"};
             start[3].row = 2;
         }
@@ -72,9 +70,7 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
     else if (start[1].g[start[1].position] == "4"){
         if (start[2].g[start[2].position] != "4"){
             start[0].g = {"10"};
-            start[0].row = 1;
-            start[3].g = {"10"};
-            start[3].row = 1;   
+            start[0].row = 1; 
         }
         if (start[0].g[start[0].position] == "10"){
             start[3].g = {"10"};
