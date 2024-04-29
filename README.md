@@ -134,7 +134,7 @@ These libraries are used to get the player's row size and column size of the scr
 We can then access the player's screen size to prompt him to resize to full screen.
 
 
-6. Compilation and execution instructions:
+6. Compilation and execution instructions (we use separate compilation) :
     $ cd spider(enter the directory)
     $ make p
     $ make clean(clean all the Compilation file)
