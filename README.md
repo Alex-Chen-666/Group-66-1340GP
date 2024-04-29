@@ -2,7 +2,7 @@ ENGG1340 Group 66 presents
 "Poker Carnival"
 
 1. Team Members:
-    Chen Zhendong
+    Chen Zhendong  3036128822
     Cheng Lefan
     Cheng Xiuheng
     Gong Jianxiang 3036129151
