@@ -6,7 +6,7 @@ ENGG1340 Group 66 presents
     Cheng Lefan    3036128406
     Cheng Xiuheng  3036127103
     Gong Jianxiang 3036129151
-    Li Shibiao
+    Li Shibiao     3036127830
 
 
 2. Description & Introduction:
