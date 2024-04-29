@@ -3,7 +3,7 @@ ENGG1340 Group 66 presents
 
 1. Team Members:
     Chen Zhendong  3036128822
-    Cheng Lefan
+    Cheng Lefan    3036128406
     Cheng Xiuheng
     Gong Jianxiang 3036129151
     Li Shibiao
