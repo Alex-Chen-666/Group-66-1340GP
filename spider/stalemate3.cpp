@@ -28,7 +28,7 @@ int stalemate( vector<vector<string>>& tableau, vector<vector<vector<string>>>& 
         }
     }
     //no stalemate after 5 steps of predicting, return 0
-    if(times==5){
+    if(times==9){
         return 0;
     }
     // try all possible moves
