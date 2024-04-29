@@ -105,6 +105,7 @@ void printscreen(std::vector<updownchoice> choice, int size, int flag){
     //print out the selection bar
     //input: a vector that contains selection bar; number of selection bar; type of prompt information
     //output: no output
+    std::cout << "\033[1;1H";
     int col_len = 0, row_len;
     for (int i = 0; i < size; i++)
         col_len += choice[i].center_length;
@@ -157,6 +158,6 @@ void printscreen(std::vector<updownchoice> choice, int size, int flag){
         std::cout << "\033[31mPress q to exit\033[0m" << std::endl;
         std::cout << "\033[1A";
     }
-    de_column_center_print(row_len);
+    //de_column_center_print(row_len);
 }
 
