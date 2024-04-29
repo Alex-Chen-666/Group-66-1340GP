@@ -6,13 +6,18 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
     //input: choice interface, current column position, moving direction
     //output: the choices are limited
     std::vector<updownchoice> origin_start = start;
-    if (start[2].g[start[2].position] == "4"){
+    if (column_position == 2&&start[2].g[start[2].position] == "4"){
         start[0].g = {"10"};
         start[0].row = 1;
         start[0].position = 0;
     }
+    else if (column_position == 2&&start[2].g[start[2].position] == "3"&&start[1].g[start[1].position] != "4"){
+        start[0].g = {"8","9"};
+        start[0].row = 2;
+        start[0].position = 0;
+    }
     if (start[1].g[start[1].position] == "1"){
-        if (start[2].g[start[2].position] != "4"){
+        if (start[2].g[start[2].position] != "4"&&start[2].g[start[2].position] != "3"){
             start[0].g = {"5", "6", "7"};
             start[0].row = 3;
         }
@@ -25,13 +30,13 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
             start[3].g = {"2","3","4"};
             start[3].row = 3;
         }
-        else if (start[0].g[start[0].position] == "10" ){
-            start[3].g = {"2","3"};
+        else if(start[0].g[start[0].position] == "9"||start[0].g[start[0].position] == "8"||start[0].g[start[0].position] == "10" ){
+            start[3].g = {"1","2"};
             start[3].row = 2;
         }
     }
     else if (start[1].g[start[1].position] == "2"){
-        if (start[2].g[start[2].position] != "4"){
+        if (start[2].g[start[2].position] != "4"&&start[2].g[start[2].position] != "3"){
             start[0].g = {"6","7","8","9"};
             start[0].row = 4;
         }
@@ -39,23 +44,27 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
             start[3].g = {"6","7","8","9"};
             start[3].row = 4;
         }
-        else if (start[0].g[start[0].position] == "8" || start[0].g[start[0].position] == "9" ){
+        else if (start[0].g[start[0].position] == "8"  ){
             start[3].g = {"4","5","6","7"};
             start[3].row = 4;
         }
+        else if(start[0].g[start[0].position] == "9"){
+            start[3].g = {"4","5","6"};
+            start[3].row = 3;
+        } 
         else if (start[0].g[start[0].position] == "10" ){
             start[3].g = {"4","5"};
             start[3].row = 2;
         }
     }
     else if (start[1].g[start[1].position] == "3"){
-        if (start[2].g[start[2].position] != "4"){
+        if (start[2].g[start[2].position] != "4"&&start[2].g[start[2].position] != "3"){
             start[0].g = {"8","9","10"};
             start[0].row = 3;
             start[3].g = {"8","9","10"};
             start[3].row = 3; 
         }  
-        if (start[0].g[start[0].position] == "10" ){
+        if (start[0].g[start[0].position] == "10" ||start[0].g[start[0].position] == "9"){
             start[3].g = {"8","9"};
             start[3].row = 2;
         }
@@ -67,7 +76,7 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
             start[3].g = {"10"};
             start[3].row = 1;   
         }
-        if (start[0].g[start[0].position] == "10" ){
+        if (start[0].g[start[0].position] == "10"){
             start[3].g = {"10"};
             start[3].row = 1;
         }
@@ -85,7 +94,7 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
         start[3].resizemainface();
         start[3].initialize();
     }
-    else if (column_position == 2 && ((start[2].g[start[2].position] == "3"&& direction == "up")||(start[2].g[start[2].position] == "4"&& direction == "down"))){
+    else if (column_position == 2 && ((start[2].g[start[2].position] == "3"&& direction == "up")||(start[2].g[start[2].position] == "4"&& direction == "down")||(start[2].g[start[2].position] == "3"&& direction == "down")||(start[2].g[start[2].position] == "2"&& direction == "up"))){
         start[0].mainface = {};
         start[0].resizemainface();
         start[0].initialize();
@@ -94,6 +103,7 @@ void choice_limit(std::vector<updownchoice> &start, int column_position, std::st
         start[3].initialize();
     }
 }
+
 
 int Initial_configuration(int &column_num, int &decks_of_card, int &suit_num, int &reserved_chances){
     //initialize game elements
