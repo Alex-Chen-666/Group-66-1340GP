@@ -109,7 +109,7 @@ int game_process(int column_number, int reserved_chances, int decks_of_card, int
                 int flag = stalemate(card, visited, hidden_position, column_number, 0);
                 if (flag == 2){
                     column_center_print(6 + 8 * column_number + 6);
-                    std::cout << "Hint: you will probably have no meaningful moves after several steps." << std::endl;
+                    std::cout << "Hint: you will probably have no meaningful moves in less than 9 steps." << std::endl;
                     outcome = "Probably Stalemate";
                 }
                 else if (flag == 3){
