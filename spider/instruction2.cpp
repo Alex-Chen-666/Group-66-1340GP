@@ -37,7 +37,7 @@ void instruction2() {
             std::cout << "\033[31mInvalid input,please try again.\033[0m" << std::flush;
             std::cout << "\033[1A" << std::endl;
             input = getchar();
-            system("clear");
+            //system("clear");
         }
     }
     std::cout << "\033[?25h";
